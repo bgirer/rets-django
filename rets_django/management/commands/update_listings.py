@@ -171,8 +171,7 @@ def extract_listing_data(listing):
                                                                dt.date]:
                         attr = listing_data[field_db_column].replace(
                                 tzinfo=pytz.UTC)
-                        setattr(listing_object, field.name,
-                                normalize_none(attr))
+                        setattr(listing_object, field.name, attr)
                     else:
                         setattr(listing_object, field.name,
                                 normalize_none(listing_data[field_db_column]))
