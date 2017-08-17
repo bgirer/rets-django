@@ -405,7 +405,10 @@ def get_listing_image(part):
 
 def fetch_listing_images(client, listing):
     """
-    Makes use of some built-in rets-python methods to get image URLs for a listing.
+    Makes use of some built-in rets-python methods to get image URLs for a listing. Note:
+    this function (and get_listing_image()) were only necessary because rets-python failed
+    to return anything useful with its Record.get_object() method when the location
+    parameter was set to True.
     """
     headers = {'Accept': '*/*'}
     payload = {'Resource': 'Property', 'Type': 'Photo',
@@ -425,6 +428,8 @@ def fetch_listing_images(client, listing):
 
 class Command(BaseCommand):
     requires_migrations_checks = True
+
+    # Enter DMQL queries as Python dicts here.
     queries = {
         'L_StatusCatID': 1,
     }
