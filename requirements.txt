@@ -16,4 +16,4 @@ requests-toolbelt==0.8.0
 rets-python==0.3.9
 titlecase==0.11.0
 udatetime==0.0.13
-urllib3==1.22
+urllib3==1.26.5
